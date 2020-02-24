@@ -1,63 +1,62 @@
-var inquirer = require("inquirer");
-var fs = require("fs");
-var requiredContent = [
-    {
-        badge = "[![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()", 
-        projectTitle = "# **A User-Generated ReadMe**",
-        description = "Test",
-        tableOfConents ="*test *test *test",
-        Installation= "Test",
-        usage= "Test",
-        lcense ="Test",
-        contributing ="test",
-        tests = "test",
-        response
-        }
-]
-fs.writeFile("content.json",requiredContent, function(err){
-    if(err){
-        return console.log(err);
-    }
-    JSON.parse
+const inquirer = require("inquirer");
+const fs = require("fs");
+const axios = require("axios");
+let avatar = "";
 
 inquirer
-  .prompt([
+    .prompt([
     {
-        type: "email",
+        type: "input",
         message: "What is your email address?",
-        name: "confirm"
-      },
-    {
-      type: "input",
-      message: "What is your GitHub user name?",
-      name: "username"
+        name: "email"
     },
     {
-      type: "password",
-      message: "What is your password?",
-      name: "password"
-    },
-    {
-      type: "password",
-      message: "Re-enter password to confirm:",
-      name: "confirm"
-    },
-  ])
-  .then(function(response) {
+        type: "input",
+        message: "What is your GitHub user name?",
+        name: "username"
+    }
+    ])
+    .then(function(response) {    
+        console.log("thanks for answering!")
+        // var username = response.username;
+        // var email = response.email;
+        try {
+        init(response);
+        } catch (error){
+            console.log(error);
+        }
+    });
 
-    if (response.confirm === response.password) {
-      console.log("Success!");
+function writeToFile(filename, data) {
+    console.log(data);
+    // fs.writeFile("TEST.md", "helloWorld",function(err){
+    //     if(err){
+    //         return console.log(err);
+    //     }
+    // })
+    fs.writeFile(filename, data.join(""), function(err){
+        if(err){
+            return console.log(err);
+        }
+    });
+}
 
-      } 
-         fs.writeFile("UserReadMe.md", response , function(err){
-            if(err){
-                return console.log(err);
-            }
-            console.log("checkout the README!");
+function init(promptResponse) {
+    console.log(promptResponse.username)
+    axios
+        .get(`https://api.github.com/users/${promptResponse.username}`)
+        .then(function(apiResponse){
+            console.log(apiResponse.data);
+            console.log(apiResponse.data.avatar_url)
+            let avatar = apiResponse.data.avatar_url// pushes the image to the prompt array
+            let username = promptResponse.username;
+            //let data = '${promptResponse.username} ${promptResponse.email}'
+            //let data = {username};
+            //let data = {`username` " \n" + promptResponse.email} // \n = next line 
+            let data = [promptResponse.username, "\n" , promptResponse.email]
+            writeToFile("USERREADME.md", data);
         })
-    }
-    else {
-      console.log("You forgot your password already?!");
-    }
-  });
+};
 
+
+//init();
