@@ -78,7 +78,7 @@ function init(promptResponse) {
             let avatar = apiResponse.data.avatar_url;
             let badge = "[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)"
             const tableOfContents = " Table of Contents \n * Project Title \n * Description \n * Installation \n * Usage \n * License \n * Contributing \n * Tests \n * Personal Info \n";
-            let data = ["# ",promptResponse.projectTitle,"\n", "## ",promptResponse.description,"\n", "##", tableOfContents, "\n", "## ", promptResponse.installation,"\n",  "### ",promptResponse.usage,"\n", "### ", promptResponse.contributing, "\n", "## ", promptResponse.tests,"\n",  "![user Avatar](",avatar,")", "\n",  "* my email: ", promptResponse.email, "\n", badge]
+            let data = ["# ",promptResponse.projectTitle,"\n", "## ",promptResponse.description,"\n", "## Table of Contents", "\n","*", tableOfContents, "\n", "## Installation","\n","*", promptResponse.installation,"\n",  "### Usage", "\n", "* ", promptResponse.usage,"\n", "### Contributors ", "\n", "* ", promptResponse.contributing, "\n", "### Tests ", "\n", "* ", promptResponse.tests, "\n ", "![user Avatar](",avatar,")", "\n",  "* my email: ", promptResponse.email, "\n ", badge]
             writeToFile("USERREADME.md", data);
         })
 };

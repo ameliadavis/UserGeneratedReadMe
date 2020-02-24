@@ -20,7 +20,10 @@
  * follow the prompts
 
 ## Usage 
-* 
+* this is a great way to generate a dynamic read me. The application dynamically creates all the mark up for a beautiful and easy to read readme.md.  
+![Screen Shot 2020-02-23 at 11 58 53 PM](https://user-images.githubusercontent.com/56802588/75133668-d6facd80-5698-11ea-9fed-e03353eaaddb.png)
+![Screen Shot 2020-02-23 at 11 59 02 PM](https://user-images.githubusercontent.com/56802588/75133601-a87cf280-5698-11ea-92f9-960ee3bea8f1.png)
+
 
 ## License
 MIT License
@@ -48,9 +51,9 @@ SOFTWARE.
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
 ## Contributing 
-*  if you want to add on to this feel free. Otherwise I got everything from free and available documentation. 
+*  if you want to add on to this feel free. Otherwise I got everything from free and available documentation. Oh and a big shout out to my tutor! 
 ## Tests
-* What Tests? 
+* Test will be designed in later releases. 
 
 ## Questions 
 
