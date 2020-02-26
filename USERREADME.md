@@ -1,5 +1,5 @@
-#  A great and Clever title
-## Its amazing you should really give it a shot
+# The Greatest Ever
+## A few short words
 ## Table of Contents
 * Table of Contents 
  * Project Title 
@@ -13,12 +13,12 @@
 
 ## Installation
 *
-### Ussage
-* saving all mankind
+### Usage
+* Stuff
 ### Contributors 
-* @ghandi 
+* ME
 ### Tests 
-* all the tests
-![user Avatar](https://avatars1.githubusercontent.com/u/56802588?v=4)
+* All
+ ![user Avatar](https://avatars1.githubusercontent.com/u/56802588?v=4)
 * my email: ameliaaltman22@gmail.com
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+ [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
